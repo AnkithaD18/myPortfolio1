@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Box Layout</title>
+    <style>
+        * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 200px;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    height: 200px;
+    background: lightblue;
+    border: 2px solid white;
+
+    /* Remaining 3 boxes share 50% */
+    flex: 1 1 calc(50% / 3);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.first {
+    /* First box takes 50% */
+    flex: 0 0 50%;
+    background: lightcoral;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .first {
+        flex: 0 0 100%;
+    }
+
+    .box {
+        flex: 0 0 33.333%;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .box,
+    .first {
+        flex: 0 0 100%;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box first">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+        <div class="box">Box 4</div>
+    </div>
+
+</body>
+</html>

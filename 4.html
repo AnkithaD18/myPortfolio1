@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cross Browser Animation</title>
+    <style>
+        .box {
+    width: 100px;
+    height: 100px;
+    background: royalblue;
+
+    /* Browser fallback */
+    -webkit-animation: move 2s ease-in-out infinite;
+    -moz-animation: move 2s ease-in-out infinite;
+    animation: move 2s ease-in-out infinite;
+}
+
+@-webkit-keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(200px);
+    }
+}
+
+@-moz-keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(200px);
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(200px);
+    }
+}
+    </style>
+</head>
+<body>
+
+    <div class="box"></div>
+
+</body>
+</html>
